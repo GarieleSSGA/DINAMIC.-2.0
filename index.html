@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pestañas de Helados</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Logo -->
+    <div style="position: absolute; top: 10px; left: 10px;">
+        <img src="https://via.placeholder.com/100" alt="Logo">
+    </div>
+
+    <!-- Título general -->
+    <div style="text-align: center; margin-top: 20px;">
+        <h1 style="color: #c4cfde; font-family: 'Poppins', sans-serif;">VOlcanes UCV</h1>
+    </div>
+
+    <!-- Pestañas -->
+    <ul class="tabs">
+        <li class="active" data-id="0">PÁGINA PRINCIPAL</li>
+        <li data-id="1">PROCESAMIENTO DE DATOS</li>
+        <li data-id="2">RESULTADOS</li>
+        <li data-id="3">NOTICIAS</li>
+        <li data-id="4">Pestaña 5</li>
+        <li data-id="5">Pestaña 6</li>
+        <li data-id="6">Pestaña 7</li>
+        <li data-id="7">Pestaña 8</li>
+    </ul>
+
+    <!-- Contenido -->
+    <div class="contents">
+        <div class="box show" data-content="0">
+            <img src="https://images.pexels.com/photos/5088009/pexels-photo-5088009.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="">
+            <div>
+                <h3>GOHLA</h3>
+                <p>
+                        EN ESPAÑOL
+                    iure
+                    
+                </p>
+            </div>
+        </div>
+
+        <div class="box hide" data-content="1">
+           
+            <div>
+                <h3>HOLA Q TAAAL</h3>
+                <p>
+                    <label for="so2Max">Valor Máximo de SO2 (Ejemplo: 100.0):</label>
+                            <input type="number" id="so2Max" step="0.01" placeholder="100.0"><br>
+                            <label for="seismicMax">Valor Máximo de Actividad Sísmica (Ejemplo: 50.0):</label>
+                            <input type="number" id="seismicMax" step="0.01" placeholder="50.0"><br>
+                            <label for="heightMax">Valor Máximo de Altura Máxima (Cenizas y Gases) (Ejemplo: 2000.0):</label>
+                            <input type="number" id="heightMax" step="0.01" placeholder="2000.0"><br>
+                            <input type="file" id="input-excel" />
+                            <button onclick="processData()">Procesar Datos</button>
+                            <div id="result">
+                                <h2>Reporte Técnico Anual</h2>
+                                <div id="chart-container">
+                                    <canvas id="myChart"></canvas>
+                                </div>
+                                <table id="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Día</th>
+                                            <th>Mes</th>
+                                            <th>Año</th>
+                                            <th>SO2</th>
+                                            <th>Actividad Sísmica</th>
+                                            <th>Altura Máxima (Cenizas y Gases)</th>
+                                            <th>Índice Compuesto</th>
+                                            <th>Índice de Evaluación</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                                <div id="analysis-summary"></div>
+                            </div>
+                            <button onclick="generatePDF()">Descargar Informe en PDF</button>
+                        </section>
+                        <section id="ai">
+                            <h2>Análisis con IA</h2>
+                            <textarea id="ai-input" rows="4" cols="50" placeholder="Escribe tu pregunta aquí..."></textarea>
+                            <button onclick="analyzeData()">Analizar</button>
+                            <div id="ai-response"></div>
+                        </section>
+                    </div>
+            
+
+                        </p>
+            </div>
+        </div>
+
+        <div class="box hide" data-content="2">
+            <img src="https://images.pexels.com/photos/3761308/pexels-photo-3761308.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
+            <div>
+                <h3>Resultados y Análisis</h3>
+                <p>
+                        pero que namaaaa
+                </p>
+            </div>
+        </div>
+
+        <div class="box hide" data-content="3">
+            <img src="https://images.pexels.com/photos/5336951/pexels-photo-5336951.jpeg?auto=compress&cs=tinysrgb&w=800" alt="">
+            <div>
+                <h3>Lorem ipsum dolor</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos accusantium itaque amet ducimus, magni
+                    iure
+                    a repudiandae molestias nemo voluptatibus voluptas earum excepturi architecto, iusto necessitatibus
+                    sequi perferendis veritatis! Voluptatem?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos accusantium itaque amet ducimus, magni
+                    iure
+                    a repudiandae molestias nemo voluptatibus voluptas earum excepturi architecto, iusto necessitatibus
+                    sequi perferendis veritatis! Voluptatem?
+                </p>
+            </div>
+        </div>
+
+        <!-- Pestañas adicionales (5-8) -->
+        <div class="box hide" data-content="4">
+            <img src="https://via.placeholder.com/800x600" alt="">
+            <div>
+                <h3>Pestaña 5</h3>
+                <p>
+                    Contenido de la pestaña 5.
+                </p>
+            </div>
+        </div>
+
+        <div class="box hide" data-content="5">
+            <img src="https://via.placeholder.com/800x600" alt="">
+            <div>
+                <h3>Pestaña 6</h3>
+                <p>
+                    Contenido de la pestaña 6.
+                </p>
+            </div>
+        </div>
+
+        <div class="box hide" data-content="6">
+            <img src="https://via.placeholder.com/800x600" alt="">
+            <div>
+                <h3>Pestaña 7</h3>
+                <p>
+                    Contenido de la pestaña 7.
+                </p>
+            </div>
+        </div>
+
+        <div class="box hide" data-content="7">
+            <img src="https://via.placeholder.com/800x600" alt="">
+            <div>
+                <h3>Pestaña 8</h3>
+                <p>
+                    Contenido de la pestaña 8.
+                </p>
+            </div>
+        </div>
+    </div>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    </head>
+    <script src="script.js"></script>
+</body>
+
+</html>
